@@ -122,7 +122,7 @@ class ValueIterationAgent(ValueEstimationAgent):
           value function stored in self.values.
         """
         "*** YOUR CODE HERE ***"
-        print("\nFUNCTION CALLED: computeQValuesFromValues")
+        # print("\nFUNCTION CALLED: computeQValuesFromValues")
         
         stateProb = self.mdp.getTransitionStatesAndProbs(state, action)
         sum = 0.0
@@ -146,9 +146,9 @@ class ValueIterationAgent(ValueEstimationAgent):
           terminal state, you should return None.
         """
         "*** YOUR CODE HERE ***"
-        print("\nFUNCTION CALLED: computeActionFromValues")
-        print(self.values)
-        print("\nSTATE: ",state)
+        # print("\nFUNCTION CALLED: computeActionFromValues")
+        # print(self.values)
+        # print("\nSTATE: ",state)
         
         if state == 'TERMINAL_STATE':
             return None
@@ -158,13 +158,13 @@ class ValueIterationAgent(ValueEstimationAgent):
         max = -9999
         
         for action in self.mdp.getPossibleActions(state):
-            print("ACTION: ",action)
+            # print("ACTION: ",action)
             #newState = self.mdp.getTransitionStatesAndProbs(state, action)
             policy = self.computeQValueFromValues(state, action)
             # print("newState: ", newState)
             # print("newState coords: ",newState[0])
             # policy = self.values[newState[0]]
-            print("POLICY: ",policy)
+            # print("POLICY: ",policy)
             if(policy > max):
                 max = policy
                 bestAction = action
